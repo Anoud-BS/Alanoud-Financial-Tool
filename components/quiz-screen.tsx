@@ -133,29 +133,34 @@ export default function QuizScreen({ onComplete }: QuizScreenProps) {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen p-6">
+    <div className="min-h-screen law-pattern p-6">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-2xl shadow-lg p-4 mb-6">
+        <div className="bg-white rounded-2xl shadow-lg p-4 mb-6 border-4 border-amber-400">
           <div className="flex justify-between items-center mb-3">
-            <span className="text-gray-600 font-medium">
+            <span className="text-slate-700 font-medium flex items-center gap-2">
+              <span className="text-amber-600">&#9878;</span>
               السؤال {currentQuestion + 1} من {questions.length}
             </span>
-            <span className="bg-green-100 text-green-700 px-4 py-1 rounded-full font-bold">
+            <span className="bg-slate-800 text-amber-300 px-4 py-1 rounded-full font-bold">
               النقاط: {score}
             </span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-3">
+          <div className="w-full bg-slate-200 rounded-full h-3">
             <div
-              className="bg-sky-500 h-3 rounded-full transition-all duration-300"
+              className="bg-gradient-to-r from-amber-500 to-amber-600 h-3 rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
         </div>
 
         {/* Question Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 mb-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-6 leading-relaxed">
+        <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 border-4 border-amber-400 relative">
+          {/* Corner decorations */}
+          <div className="absolute top-0 left-0 w-10 h-10 border-t-4 border-l-4 border-slate-700 rounded-tl-xl"></div>
+          <div className="absolute top-0 right-0 w-10 h-10 border-t-4 border-r-4 border-slate-700 rounded-tr-xl"></div>
+          
+          <h2 className="text-xl font-bold text-slate-800 mb-6 leading-relaxed">
             {question.question}
           </h2>
 
@@ -170,10 +175,10 @@ export default function QuizScreen({ onComplete }: QuizScreenProps) {
                 } else if (index === selectedAnswer && !isCorrect) {
                   buttonClass += "bg-red-100 border-red-500 text-red-800";
                 } else {
-                  buttonClass += "bg-gray-50 border-gray-200 text-gray-500";
+                  buttonClass += "bg-slate-50 border-slate-200 text-slate-500";
                 }
               } else {
-                buttonClass += "bg-gray-50 border-gray-200 hover:bg-sky-50 hover:border-sky-300 text-gray-700";
+                buttonClass += "bg-slate-50 border-slate-200 hover:bg-amber-50 hover:border-amber-400 text-slate-700";
               }
 
               return (
@@ -191,11 +196,11 @@ export default function QuizScreen({ onComplete }: QuizScreenProps) {
 
           {/* Explanation */}
           {showExplanation && (
-            <div className={`mt-6 p-4 rounded-xl ${isCorrect ? "bg-green-50 border border-green-200" : "bg-red-50 border border-red-200"}`}>
+            <div className={`mt-6 p-4 rounded-xl ${isCorrect ? "bg-green-50 border-2 border-green-300" : "bg-red-50 border-2 border-red-300"}`}>
               <p className={`font-bold mb-2 ${isCorrect ? "text-green-700" : "text-red-700"}`}>
-                {isCorrect ? "إجابة صحيحة! +10 نقاط" : "إجابة خاطئة"}
+                {isCorrect ? "&#10003; إجابة صحيحة! +10 نقاط" : "&#10007; إجابة خاطئة"}
               </p>
-              <p className="text-gray-700">{question.explanation}</p>
+              <p className="text-slate-700">{question.explanation}</p>
             </div>
           )}
         </div>
@@ -205,7 +210,7 @@ export default function QuizScreen({ onComplete }: QuizScreenProps) {
           <div className="text-center">
             <button
               onClick={handleNextQuestion}
-              className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-xl text-lg transition-all hover:scale-105 shadow-lg"
+              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-900 font-bold py-3 px-8 rounded-xl text-lg transition-all hover:scale-105 shadow-lg border-2 border-amber-300"
             >
               {currentQuestion < questions.length - 1 ? "السؤال التالي" : "عرض النتيجة"}
             </button>
