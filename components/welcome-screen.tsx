@@ -17,7 +17,6 @@ export default function WelcomeScreen({ onStartLearning }: WelcomeScreenProps) {
           
           <div className="relative z-10 text-center">
             <p className="text-xs font-bold text-sky-800">Princess Norah University</p>
-            <p className="text-xs text-sky-700">DICE (BUS 151)</p>
             <p className="text-xs font-bold text-sky-800">جامعة الأميرة نورة</p>
           </div>
         </div>
@@ -69,12 +68,7 @@ export default function WelcomeScreen({ onStartLearning }: WelcomeScreenProps) {
           ابدأ التعلم
         </button>
 
-        {/* Instructor Credit */}
-        <div className="mt-6 py-3 bg-indigo-50 rounded-lg border border-indigo-100">
-          <p className="text-base font-bold text-indigo-800">
-            أستاذة المقرر: د. جميلة القحطاني
-          </p>
-        </div>
+
       </div>
     </div>
   );
