@@ -1,19 +1,23 @@
 {
   "dependencies": {
     "@types/hoist-non-react-statics": "latest",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.454.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "lucide-react": "1.14.0",
+    "next": "16.2.4",
+    "react": "19.2.5",
     "react-dnd": "^16.0.1",
     "react-dnd-touch-backend": "^16.0.1",
-    "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "react-dom": "19.2.5",
+    "tailwind-merge": "3.5.0",
+    "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "postcss": "^8.5",
-    "typescript": "^5"
+    "@types/node": "25.6.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "postcss": "8.5.14",
+    "tailwindcss": "4.2.4",
+    "typescript": "6.0.3"
   }
 }

@@ -1,25 +1,28 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
+import type { Metadata } from "next";
+import { Noto_Sans_Arabic } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] })
+const notoSansArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic",
+});
 
 export const metadata: Metadata = {
-  title: "Savvy Kid - Smart Kid Wallet",
-  description: "Learn financial literacy through fun games",
+  title: "شركات الأشخاص - النظام التجاري السعودي",
+  description: "لعبة تعليمية تفاعلية عن شركات الأشخاص في النظام التجاري السعودي",
     generator: 'v0.app'
-}
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
-      <head>{/* Add any additional head elements here */}</head>
-      <body className={inter.className}>{children}</body>
+    <html lang="ar" dir="rtl" className="bg-sky-50">
+      <body className={`${notoSansArabic.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
-  )
+  );
 }

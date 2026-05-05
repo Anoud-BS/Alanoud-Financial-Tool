@@ -1,0 +1,240 @@
+"use client";
+
+import { useState } from "react";
+
+interface LearningScreenProps {
+  onStartQuiz: () => void;
+}
+
+export default function LearningScreen({ onStartQuiz }: LearningScreenProps) {
+  const [activeTab, setActiveTab] = useState<"intro" | "tadamun" | "tawsiya" | "comparison">("intro");
+
+  return (
+    <div className="min-h-screen p-6">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            شركات الأشخاص في النظام التجاري السعودي
+          </h1>
+          <p className="text-gray-600">اضغط على الأقسام للتعرف على المحتوى</p>
+        </div>
+
+        {/* Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
+          <button
+            onClick={() => setActiveTab("intro")}
+            className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              activeTab === "intro"
+                ? "bg-sky-500 text-white"
+                : "bg-white text-gray-700 hover:bg-sky-100"
+            }`}
+          >
+            مقدمة
+          </button>
+          <button
+            onClick={() => setActiveTab("tadamun")}
+            className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              activeTab === "tadamun"
+                ? "bg-blue-500 text-white"
+                : "bg-white text-gray-700 hover:bg-blue-100"
+            }`}
+          >
+            شركة التضامن
+          </button>
+          <button
+            onClick={() => setActiveTab("tawsiya")}
+            className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              activeTab === "tawsiya"
+                ? "bg-amber-500 text-white"
+                : "bg-white text-gray-700 hover:bg-amber-100"
+            }`}
+          >
+            شركة التوصية البسيطة
+          </button>
+          <button
+            onClick={() => setActiveTab("comparison")}
+            className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              activeTab === "comparison"
+                ? "bg-purple-500 text-white"
+                : "bg-white text-gray-700 hover:bg-purple-100"
+            }`}
+          >
+            مقارنة
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
+          {activeTab === "intro" && (
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-sky-700 mb-4">ما هي شركات الأشخاص؟</h2>
+              <div className="bg-sky-50 rounded-xl p-4 border border-sky-100">
+                <p className="text-gray-700 leading-relaxed mb-3">
+                  شركات الأشخاص هي شركات تعتمد على <span className="font-bold text-sky-700">الاعتبار الشخصي</span> بين الشركاء.
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-sky-500 mt-1">●</span>
+                    <span>تعتمد على <span className="font-bold">الثقة</span> بين الشركاء</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-sky-500 mt-1">●</span>
+                    <span><span className="font-bold">الشخصية والخبرة</span> لها دور أساسي</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-sky-500 mt-1">●</span>
+                    <span>لا يمكن نقل الحصص إلا <span className="font-bold">بموافقة جميع الشركاء</span></span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <p className="text-gray-600 font-medium">
+                  أنواع شركات الأشخاص في النظام السعودي:
+                </p>
+                <div className="flex gap-4 mt-3">
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg font-medium">شركة التضامن</span>
+                  <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-lg font-medium">شركة التوصية البسيطة</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "tadamun" && (
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-blue-700 mb-4">شركة التضامن</h2>
+              <div className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                <ul className="space-y-4 text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                    <div>
+                      <p className="font-bold text-blue-800">المسؤولية</p>
+                      <p>جميع الشركاء مسؤولون مسؤولية <span className="font-bold text-red-600">كاملة وغير محدودة</span> عن ديون الشركة</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                    <div>
+                      <p className="font-bold text-blue-800">صفة التاجر</p>
+                      <p>كل شريك يعتبر <span className="font-bold text-blue-700">تاجر</span></p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                    <div>
+                      <p className="font-bold text-blue-800">الإدارة</p>
+                      <p><span className="font-bold">جميع الشركاء</span> يديرون الشركة</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">4</div>
+                    <div>
+                      <p className="font-bold text-blue-800">المسؤولية الشخصية</p>
+                      <p>المسؤولية <span className="font-bold">شخصية وكاملة</span> عن جميع الالتزامات</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "tawsiya" && (
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-amber-700 mb-4">شركة التوصية البسيطة</h2>
+              <div className="bg-amber-50 rounded-xl p-4 border border-amber-100 mb-4">
+                <p className="text-gray-700 mb-3">تتكون من <span className="font-bold">نوعين</span> من الشركاء:</p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+                  <h3 className="text-lg font-bold text-green-700 mb-3">الشركاء المتضامنون</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">●</span>
+                      <span>مسؤوليتهم <span className="font-bold">كاملة وغير محدودة</span></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">●</span>
+                      <span>يديرون الشركة</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 mt-1">●</span>
+                      <span>يعتبرون <span className="font-bold">تجار</span></span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-orange-50 rounded-xl p-4 border border-orange-200">
+                  <h3 className="text-lg font-bold text-orange-700 mb-3">الشركاء الموصون</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500 mt-1">●</span>
+                      <span>مسؤوليتهم <span className="font-bold">محدودة بقدر حصتهم</span></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500 mt-1">●</span>
+                      <span><span className="font-bold">لا يشاركون</span> في الإدارة</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500 mt-1">●</span>
+                      <span><span className="font-bold">لا يعتبرون</span> تجار</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "comparison" && (
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-purple-700 mb-4">مقارنة بين النوعين</h2>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-purple-100">
+                      <th className="border border-purple-200 p-3 text-purple-800">العنصر</th>
+                      <th className="border border-purple-200 p-3 text-blue-700">شركة التضامن</th>
+                      <th className="border border-purple-200 p-3 text-amber-700">شركة التوصية البسيطة</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white">
+                      <td className="border border-purple-200 p-3 font-medium">المسؤولية</td>
+                      <td className="border border-purple-200 p-3">غير محدودة لجميع الشركاء</td>
+                      <td className="border border-purple-200 p-3">متضامن: غير محدودة<br/>موصي: محدودة</td>
+                    </tr>
+                    <tr className="bg-purple-50">
+                      <td className="border border-purple-200 p-3 font-medium">صفة التاجر</td>
+                      <td className="border border-purple-200 p-3">جميع الشركاء تجار</td>
+                      <td className="border border-purple-200 p-3">المتضامن فقط تاجر</td>
+                    </tr>
+                    <tr className="bg-white">
+                      <td className="border border-purple-200 p-3 font-medium">الإدارة</td>
+                      <td className="border border-purple-200 p-3">جميع الشركاء</td>
+                      <td className="border border-purple-200 p-3">الشركاء المتضامنون فقط</td>
+                    </tr>
+                    <tr className="bg-purple-50">
+                      <td className="border border-purple-200 p-3 font-medium">انتقال الحصص</td>
+                      <td className="border border-purple-200 p-3">بموافقة الجميع</td>
+                      <td className="border border-purple-200 p-3">بموافقة الجميع</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Start Quiz Button */}
+        <div className="text-center">
+          <button
+            onClick={onStartQuiz}
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-12 rounded-xl text-xl transition-all hover:scale-105 shadow-lg"
+          >
+            ابدأ الاختبار
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
