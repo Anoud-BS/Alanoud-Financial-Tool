@@ -35,19 +35,19 @@ export default function ResultsScreen({ score, totalQuestions, onRestart, onRetr
         </>
       )}
 
-      <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full text-center border-4 border-amber-400 relative">
+      <div className="bg-amber-50 rounded-3xl shadow-2xl p-8 max-w-md w-full text-center border-4 border-red-900 relative">
         {/* Corner decorations */}
-        <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-red-900 rounded-tl-3xl"></div>
-        <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-red-900 rounded-tr-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-red-900 rounded-bl-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-red-900 rounded-br-3xl"></div>
+        <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-amber-400 rounded-tl-3xl"></div>
+        <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-amber-400 rounded-tr-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-amber-400 rounded-bl-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-amber-400 rounded-br-3xl"></div>
 
         {/* Result Icon */}
         <div className="text-8xl mb-4">
           {isExcellent ? (
-            <span className="text-amber-500">&#9878;</span>
+            <span>🏆🎉</span>
           ) : (
-            <span className="text-red-400">&#9878;</span>
+            <span>😢</span>
           )}
         </div>
 
@@ -109,13 +109,13 @@ export default function ResultsScreen({ score, totalQuestions, onRestart, onRetr
         <div className="space-y-3">
           <button
             onClick={onRetry}
-            className="w-full bg-gradient-to-r from-red-800 to-red-900 hover:from-red-900 hover:to-red-950 text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-105 border-2 border-amber-400"
+            className="w-full bg-red-900 hover:bg-red-800 text-amber-50 font-bold py-3 px-6 rounded-xl transition-all hover:scale-105"
           >
             إعادة الاختبار
           </button>
           <button
             onClick={onRestart}
-            className="w-full bg-amber-100 hover:bg-amber-200 text-red-900 font-bold py-3 px-6 rounded-xl transition-all border-2 border-amber-300"
+            className="w-full bg-white hover:bg-amber-100 text-red-900 font-bold py-3 px-6 rounded-xl transition-all border-2 border-red-900"
           >
             العودة للبداية
           </button>

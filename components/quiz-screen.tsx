@@ -147,7 +147,7 @@ export default function QuizScreen({ onComplete }: QuizScreenProps) {
     <div className="min-h-screen law-pattern p-6">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-2xl shadow-lg p-4 mb-6 border-4 border-amber-400">
+        <div className="bg-amber-50 rounded-2xl shadow-lg p-4 mb-6 border-4 border-red-900">
           <div className="flex justify-between items-center mb-3">
             <span className="text-red-900 font-medium flex items-center gap-2">
               <span className="text-amber-600">&#9878;</span>
@@ -166,7 +166,7 @@ export default function QuizScreen({ onComplete }: QuizScreenProps) {
         </div>
 
         {/* Question Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 border-4 border-amber-400 relative">
+        <div className="bg-amber-50 rounded-2xl shadow-xl p-6 mb-6 border-4 border-red-900 relative">
           {/* Corner decorations */}
           <div className="absolute top-0 left-0 w-10 h-10 border-t-4 border-l-4 border-red-900 rounded-tl-xl"></div>
           <div className="absolute top-0 right-0 w-10 h-10 border-t-4 border-r-4 border-red-900 rounded-tr-xl"></div>
@@ -209,7 +209,7 @@ export default function QuizScreen({ onComplete }: QuizScreenProps) {
           {showExplanation && (
             <div className={`mt-6 p-4 rounded-xl ${isCorrect ? "bg-green-50 border-2 border-green-300" : "bg-red-50 border-2 border-red-300"}`}>
               <p className={`font-bold mb-2 text-lg ${isCorrect ? "text-green-700" : "text-red-700"}`}>
-                {isCorrect ? "&#10003; إجابة صحيحة! +10 نقاط" : "&#10007; إجابة خاطئة"}
+                {isCorrect ? "🏆🎉 إجابة صحيحة! +10 نقاط" : "😢 إجابة خاطئة"}
               </p>
               <p className="text-gray-700 mb-3">{question.explanation}</p>
               <div className="bg-amber-100 rounded-lg p-3 border border-amber-300">
@@ -226,7 +226,7 @@ export default function QuizScreen({ onComplete }: QuizScreenProps) {
           <div className="text-center">
             <button
               onClick={handleNextQuestion}
-              className="bg-gradient-to-r from-red-800 to-red-900 hover:from-red-900 hover:to-red-950 text-white font-bold py-3 px-8 rounded-xl text-lg transition-all hover:scale-105 shadow-lg border-2 border-amber-400"
+              className="bg-red-900 hover:bg-red-800 text-amber-50 font-bold py-3 px-8 rounded-xl text-lg transition-all hover:scale-105 shadow-lg"
             >
               {currentQuestion < questions.length - 1 ? "السؤال التالي" : "عرض النتيجة"}
             </button>

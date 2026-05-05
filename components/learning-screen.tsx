@@ -13,7 +13,7 @@ export default function LearningScreen({ onStartQuiz }: LearningScreenProps) {
     <div className="min-h-screen law-pattern p-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8 bg-white rounded-2xl p-6 border-4 border-amber-400 shadow-xl">
+        <div className="text-center mb-8 bg-amber-50 rounded-2xl p-6 border-4 border-red-900 shadow-xl">
           <div className="text-4xl text-red-900 mb-2">&#9878;</div>
           <h1 className="text-3xl font-bold text-red-900 mb-2">
             شركات الأشخاص في النظام التجاري السعودي
@@ -69,7 +69,7 @@ export default function LearningScreen({ onStartQuiz }: LearningScreenProps) {
         </div>
 
         {/* Content */}
-        <div className="bg-white rounded-2xl shadow-xl p-6 mb-8 border-4 border-amber-400 relative">
+        <div className="bg-amber-50 rounded-2xl shadow-xl p-6 mb-8 border-4 border-red-900 relative">
           {/* Corner decorations */}
           <div className="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-red-900 rounded-tl-xl"></div>
           <div className="absolute top-0 right-0 w-12 h-12 border-t-4 border-r-4 border-red-900 rounded-tr-xl"></div>
@@ -247,13 +247,13 @@ export default function LearningScreen({ onStartQuiz }: LearningScreenProps) {
 
         {/* Start Quiz Button */}
         <div className="text-center">
-          <div className="bg-amber-100 rounded-xl p-4 mb-4 inline-block border-2 border-amber-400">
+          <div className="bg-white rounded-xl p-4 mb-4 inline-block border-2 border-red-900">
             <p className="text-red-900 font-bold">هل أنت جاهز للتحدي؟ اختبر معلوماتك الآن!</p>
           </div>
           <div>
             <button
               onClick={onStartQuiz}
-              className="bg-gradient-to-r from-red-800 to-red-900 hover:from-red-900 hover:to-red-950 text-white font-bold py-4 px-12 rounded-xl text-xl transition-all hover:scale-105 shadow-lg border-2 border-amber-400"
+              className="bg-red-900 hover:bg-red-800 text-amber-50 font-bold py-4 px-12 rounded-xl text-xl transition-all hover:scale-105 shadow-lg"
             >
               ابدأ الاختبار
             </button>
